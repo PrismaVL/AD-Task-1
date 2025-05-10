@@ -7,7 +7,7 @@
     </head>
     <body>
         <div class="container">
-    <h2> Sign Up </h2>
+    <h2>Get started with your account</h2>
     <form method="post">
         <label for="first-name">First Name</label>
         <input type="text" class="text" id= first-name" name="first_name" required>
