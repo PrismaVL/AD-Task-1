@@ -33,9 +33,11 @@
         <label for="mypassword">Password</label>
         <input type="password" id="mypassword" name="password" required>
 
-        <input type="checkbox" id="showPassword">
-        <label for="showPassword">Show Password</label>
-        
+        <div class="show-password">
+            <input type="checkbox" id="showPassword">
+            <label for="showPassword">Show Password</label>
+        </div>
+
         <button type="submit">Register</button>
     </form>
         </div>
