@@ -30,6 +30,11 @@
         <label for="number">Number</label>
         <input type="tel" class="text" id= number" name="number" pattern="0-9"{11} placeholder="09260652013" required>
 
+        <label for="password">Password</label>
+        <input type="password" id= password" name="password" required>
+        <input type="checkbox" onclick="myFunction()">Show Password
+
+
         <button type="submit">Register</button>
     </form>
         </div>
