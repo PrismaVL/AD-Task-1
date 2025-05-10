@@ -31,3 +31,10 @@ input [type="tel"],[type="date"],[type="email"], .text, #mypassword {
     border-radius: 5px;
     box-sizing: border-box;
 }
+
+.show-password {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    gap: 8px; /* spacing between checkbox and label */
+}
