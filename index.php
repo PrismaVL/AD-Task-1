@@ -25,10 +25,10 @@
         <input type="text" id= address" name="address" required>
 
         <label for="email">Email</label>
-        <input type="email" id= email" name="email" required>
+        <input type="email" id= gmail" name="gmail" required>
 
         <label for="number">Number</label>
-        <input type="text" id= number" name="number" required>
+        <input type="tel" id= number" name="number" pattern="0-9"{11} placeholder="09260652013" required>
 
         <button type="submit">Register</button>
     </form>
