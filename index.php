@@ -38,7 +38,10 @@
             <label for="showPassword">Show Password</label>
         </div>
 
-        <button type="submit">Register</button>
+        <div class="button-container">
+            <button type="submit">Register</button>
+        </div>
+        
     </form>
         </div>
         <script src="assets/js/script.js" defer></script>
