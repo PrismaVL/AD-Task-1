@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
     <title>Account Dashboard</title>
     <link href="assets/css/styles1.css" media="all" rel="stylesheet">
 </head>
