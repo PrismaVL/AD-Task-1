@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title> Sign Up</title>
-        <link href="assets/css/styles.css" media="all" rel="stylesheet">
-    </head>
-    <body>
-        <div class="container">
-    <h2>Get started with your account</h2>
+<head>
+    <meta charset="utf-8">
+    <title>Sign Up</title>
+    <link href="assets/css/styles.css" media="all" rel="stylesheet">
+    <style>
+        .error { color: red; }
+        input { margin-bottom: 10px; display: block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Get started with your account</h2>
+
+    <?php
+    $error = "";
+    
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        $birthdate = $_POST['birthdate'] ?? '';
+        $first_name = $_POST['first_name'] ?? '';
+
+        if (!empty($birthdate)) {
+            $today = new DateTime();
+            $birthday = new DateTime($birthdate);
+            $age = $today->diff($birthday)->y;
+            
+            if ($age < 18) {
+                $error = "You must be 18 or older to register!";
+            } else {
+                header("Location: page/index1.php");
+                exit;
+            }
+        }
+    }
+    ?>
+
+    <?php if ($error): ?>
+        <div class="error"><?php echo $error; ?></div>
+    <?php endif; ?>
+
     <form method="post">
         <label for="first-name">First Name</label>
         <input type="text" class="text" id= "first-name" name="first_name" required>
