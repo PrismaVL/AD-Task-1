@@ -28,7 +28,7 @@
                 } else {
                     session_start();
                     $_SESSION['form_data'] = $_POST;
-                    header("Location: index1.php");
+                    header("Location: page/index1.php");
                     exit;
                 }
             }
