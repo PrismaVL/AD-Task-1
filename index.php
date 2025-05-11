@@ -36,7 +36,7 @@
         <div class="error"><?php echo $error; ?></div>
     <?php endif; ?>
 
-    <form method="post">
+    <form method="post" action="index1.php>
         <label for="first-name">First Name</label>
         <input type="text" class="text" id= "first-name" name="first_name" required>
 
