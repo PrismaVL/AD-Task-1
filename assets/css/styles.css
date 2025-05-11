@@ -63,4 +63,6 @@ button:hover{
 }
 
 .error { color: red; }
-input { margin-bottom: 10px; display: block; }
+input { margin-bottom: 10px;
+        display: block;
+}
