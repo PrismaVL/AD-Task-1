@@ -40,10 +40,9 @@
 
         <div class="button-container">
             <button type="submit">Register</button>
-        </div>
-        
+        </div>  
     </form>
-        </div>
+    </div>
         <script src="assets/js/script.js" defer></script>
     </body>
 </html>
