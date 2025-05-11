@@ -9,67 +9,71 @@
     <div class="container">
         <h2>Get started with your account</h2>
 
-    <?php
-    $error = "";
-    
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        <?php
+        $error = "";
+        
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $birthdate = $_POST['birthdate'] ?? '';
+            $first_name = $_POST['first_name'] ?? '';
 
-        $birthdate = $_POST['birthdate'] ?? '';
-        $first_name = $_POST['first_name'] ?? '';
-
-        if (!empty($birthdate)) {
-            $today = new DateTime();
-            $birthday = new DateTime($birthdate);
-            $age = $today->diff($birthday)->y;
-            
-            if ($age < 18) {
-                $error = "You must be 18 or older to register!";
+            if (empty($birthdate)) {
+                $error = "Birthdate is required!";
             } else {
-                header("Location: page/index1.php");
-                exit;
+                $today = new DateTime();
+                $birthday = new DateTime($birthdate);
+                $age = $today->diff($birthday)->y;
+                
+                if ($age < 18) {
+                    $error = "You must be 18 or older to register!";
+                } else {
+                    session_start();
+                    $_SESSION['form_data'] = $_POST;
+                    header("Location: index1.php");
+                    exit;
+                }
             }
         }
-    }
-    ?>
+        ?>
 
-    <?php if ($error): ?>
-        <div class="error"><?php echo $error; ?></div>
-    <?php endif; ?>
+        <?php if ($error): ?>
+            <div class="error"><?php echo $error; ?></div>
+        <?php endif; ?>
 
-<form method="post" action="index1.php">
-    <label for="first-name">First Name</label>
-    <input type="text" class="text" id="first-name" name="first_name" required>
+        <form method="post" action="">
+            <label for="first-name">First Name</label>
+            <input type="text" class="text" id="first-name" name="first_name" required>
 
-    <label for="middle-name">Middle Name</label>
-    <input type="text" class="text" id="middle-name" name="middle_name">
+            <label for="middle-name">Middle Name</label>
+            <input type="text" class="text" id="middle-name" name="middle_name">
 
-    <label for="last-name">Last Name</label>
-    <input type="text" class="text" id="last-name" name="last_name" required>
+            <label for="last-name">Last Name</label>
+            <input type="text" class="text" id="last-name" name="last_name" required>
 
-    <label for="birthdate">Birthdate</label>
-    <input type="date" id="birthdate" name="birthdate" required>
+            <label for="birthdate">Birthdate</label>
+            <input type="date" id="birthdate" name="birthdate" required>
 
-    <label for="address">Address</label>
-    <input type="text" class="text" id="address" name="address" required>
+            <label for="address">Address</label>
+            <input type="text" class="text" id="address" name="address" required>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
 
-    <label for="number">Number</label>
-    <input type="tel" class="text" id="number" name="number" pattern="[0-9]{11}" placeholder="09260652013" required>
+            <label for="number">Number</label>
+            <input type="tel" class="text" id="number" name="number" pattern="[0-9]{11}" placeholder="09260652013" required>
 
-    <label for="mypassword">Password</label>
-    <input type="password" id="mypassword" name="password" required>
+            <label for="mypassword">Password</label>
+            <input type="password" id="mypassword" name="password" required>
 
-    <div class="show-password">
-        <input type="checkbox" id="showPassword">
-        <label for="showPassword">Show Password</label>
+            <div class="show-password">
+                <input type="checkbox" id="showPassword">
+                <label for="showPassword">Show Password</label>
+            </div>
+
+            <div class="button-container">
+                <button type="submit">Register</button>
+            </div>  
+        </form>
     </div>
-    <div class="button-container">
-        <button type="submit">Register</button>
-    </div>  
-</form>
-    </div>
-        <script src="assets/js/script.js" defer></script>
-    </body>
+    <script src="assets/js/script.js" defer></script>
+</body>
 </html>
