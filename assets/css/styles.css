@@ -4,3 +4,33 @@ html, body {
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    cursor: default;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 0 10px #007BFF, 0 0 20px #007BFF;
+    animation: floatUpDown 2s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+.highlight {
+    font-weight: bold;
+    color: #00bfff;
+}
