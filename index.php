@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Sign Up</title>
-    <link href="assets/css/styles.css" media="all" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['clicked'])) {
+        header("Location: page/index1.php");
+        exit();}
+
+    $firstName = "JAYMARD";
+    $lastName = "LICAS";
+    $fullName = $firstName . " " . $lastName;
+    ?>
+
+    <div class="full-page-link" onclick="window.location.href='?clicked=true'">
+        <h1>WELCOME TO YOUR WEBSITE <span class='highlight'><?php echo htmlspecialchars($fullName); ?></span></h1>
+    </div>
+    
 </body>
 </html>
