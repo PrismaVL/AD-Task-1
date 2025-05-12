@@ -1,45 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Account Dashboard</title>
-    <link href="assets/css/styles1.css" media="all" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Basics</title>
+    <link rel="stylesheet" href="assets/css/styles1.css">
 </head>
 <body>
-    <div class="profile-card">
-
-        <?php
-        session_start();
-        if (!isset($_SESSION['form_data'])) {
-            header("Location: index.php");
-            exit;
-        }
-        $formData = $_SESSION['form_data'];
-        ?>
-
-        <?php
-        $birthdate = new DateTime($formData['birthdate']);
-        $today = new DateTime();
-        $age = $today->diff($birthdate)->y;
-        ?>
+    <h1>PHP Basics</h1>
+    
+    <div class="container">
+        <div class="box">
+            <h2>1. Declarations</h2>
+            
+            <h3>Variables</h3>
+            <pre>&lt;?php
+$name = "John Doe";
+$age = 30;
+$price = 19.99;
+$is_active = true;
+?&gt;</pre>
+            <div class="result">
+                <?php
+                $name = "John Doe";
+                $age = 30;
+                $price = 19.99;
+                $is_active = true;
+                echo "Name: $name<br>";
+                echo "Age: $age<br>";
+                echo "Price: $$price<br>";
+                echo "Active: " . ($is_active ? 'Yes' : 'No');
+                ?>
+            </div>
+            
+            <h3>Arrays</h3>
+            <pre>&lt;?php
+$colors = ["Red", "Green", "Blue"];
+$person = ["name" => "Alice", "age" => 25];
+?&gt;</pre>
+            <div class="result">
+                <?php
+                $colors = ["Red", "Green", "Blue"];
+                $person = ["name" => "Alice", "age" => 25];
+                echo "Colors: " . implode(", ", $colors) . "<br>";
+                echo "Person: {$person['name']}, {$person['age']}";
+                ?>
+            </div>
+        </div>
         
-        <h1>Welcome, <?php echo htmlspecialchars($formData['first_name']); ?>!</h1>
-        <p>Your account has been successfully created.</p>
+        <div class="box">
+            <h2>2. Conditionals</h2>
+            
+            <h3>If-Else</h3>
+            <pre>&lt;?php
+$temp = 22;
+if ($temp > 30) {
+    echo "Hot!";
+} elseif ($temp > 20) {
+    echo "Pleasant!";
+} else {
+    echo "Cool!";
+}
+?&gt;</pre>
+            <div class="result">
+                <?php
+                $temp = 22;
+                if ($temp > 30) {
+                    echo "Hot!";
+                } elseif ($temp > 20) {
+                    echo "Pleasant!";
+                } else {
+                    echo "Cool!";
+                }
+                ?>
+            </div>
+            
+            <h3>Switch</h3>
+            <pre>&lt;?php
+$day = "Monday";
+switch($day) {
+    case "Monday":
+        echo "Work week starts";
+        break;
+    case "Friday":
+        echo "Weekend coming!";
+        break;
+    default:
+        echo "Regular day";
+}
+?&gt;</pre>
+            <div class="result">
+                <?php
+                $day = "Monday";
+                switch($day) {
+                    case "Monday":
+                        echo "Work week starts";
+                        break;
+                    case "Friday":
+                        echo "Weekend coming!";
+                        break;
+                    default:
+                        echo "Regular day";
+                }
+                ?>
+            </div>
+        </div>
         
-        <div class="profile-info">
-<p><span class="info-label">Name:</span> 
-            <?php 
-    echo htmlspecialchars($formData['first_name'] . ' ' . 
-                         ($formData['middle_name'] ?? '') . ' ' . 
-                          $formData['last_name']); 
-            ?>
-            </p>
-            <p><span class="info-label">Birthdate:</span> <?php echo htmlspecialchars($formData['birthdate']); ?></p>
-            <p><span class="info-label">Age:</span> <?php echo $age; ?> years</p>
-            <p><span class="info-label">Address:</span> <?php echo htmlspecialchars($formData['address']); ?></p>
-            <p><span class="info-label">Email:</span> <?php echo htmlspecialchars($formData['email']); ?></p>
-            <p><span class="info-label">Phone Number:</span> <?php echo htmlspecialchars($formData['number']); ?></p>
-            <p><span class="info-label">Member Since:</span> <?php echo date('F j, Y'); ?></p>
+        <div class="box">
+            <h2>3. Looping</h2>
+            
+            <h3>For Loop</h3>
+            <pre>&lt;?php
+for ($i = 1; $i <= 3; $i++) {
+    echo "Count: $i&lt;br&gt;";
+}
+?&gt;</pre>
+            <div class="result">
+                <?php
+                for ($i = 1; $i <= 3; $i++) {
+                    echo "Count: $i<br>";
+                }
+                ?>
+            </div>
+            
+            <h3>While Loop</h3>
+            <pre>&lt;?php
+$count = 1;
+while ($count <= 3) {
+    echo "Number: $count&lt;br&gt;";
+    $count++;
+}
+?&gt;</pre>
+            <div class="result">
+                <?php
+                $count = 1;
+                while ($count <= 3) {
+                    echo "Number: $count<br>";
+                    $count++;
+                }
+                ?>
+            </div>
         </div>
     </div>
 </body>
