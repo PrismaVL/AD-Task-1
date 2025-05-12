@@ -17,9 +17,9 @@
     $fullName = $firstName . " " . $lastName;
     ?>
 
-    <div class="full-page-link" onclick="window.location.href='?clicked=true'">
+    <div class="screen" onclick="window.location.href='?clicked=true'">
         <h1>WELCOME TO YOUR WEBSITE <span class='highlight'><?php echo htmlspecialchars($fullName); ?></span></h1>
     </div>
-    
+
 </body>
 </html>
