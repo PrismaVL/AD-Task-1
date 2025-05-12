@@ -12,13 +12,13 @@
         header("Location: page/index1.php");
         exit();}
 
-    $firstName = "JAYMARD";
-    $lastName = "LICAS";
+    $firstName = "PHP";
+    $lastName = "BASICS";
     $fullName = $firstName . " " . $lastName;
     ?>
 
     <div class="screen" onclick="window.location.href='?clicked=true'">
-        <h1>WELCOME TO YOUR WEBSITE <span class='highlight'><?php echo htmlspecialchars($fullName); ?></span></h1>
+        <h1>WELCOME TO <span class='highlight'><?php echo htmlspecialchars($fullName); ?></span></h1>
     </div>
 
 </body>
