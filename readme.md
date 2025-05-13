@@ -13,7 +13,7 @@
 </div>
 <!-- TODO: Make a short description -->
 <div align="center">
-A webpage that shows a login/sign-up form and displays the user’s details on another page.
+A webpage that shows a a welcome page and the basics of the PHP such as looping, declaration, conditional.
 </div>
 
 <br />
@@ -61,16 +61,18 @@ A webpage that shows a login/sign-up form and displays the user’s details on a
 <!-- TODO: To be changed -->
 <!-- The following are just sample -->
 
-a webpage that includes both login and sign-up functionality, and after a user successfully logs in or signs up, their details should be displayed on a separate page.
+A simple webpage that presents an inviting welcome screen for the user and provides an introduction to the essential concepts of PHP programming, including variable declaration, the use of conditional statements, and various types of looping structures for control flow.
 
 ### Key Components
 
 <!-- TODO: List of Key Components -->
 <!-- The following are just sample -->
 
-- Age Verification
-- Information Requirements to go through
-- Complete Information in dashboard
+- Welcome Page
+- Basics of PHP
+- Looping
+- Declaration
+- Conditional
 
 ### Technology
 
@@ -133,5 +135,4 @@ AD-ProjectName
 
 | Title        | Purpose                                                                       | Link          |
 | ------------ | ----------------------------------------------------------------------------- | ------------- |
-| HTML <input> pattern Attribute| The pattern attribute specifies a regular expression that the <input> element's value is checked against on form submission. | https://www.w3schools.com/tags/att_input_pattern.asp |
-| HTML HEX Colors | A hexadecimal color is specified with: #RRGGBB, where the RR (red), GG (green) and BB (blue) hexadecimal integers specify the components of the color. | https://www.w3schools.com/html/html_colors_hex.asp |
+
